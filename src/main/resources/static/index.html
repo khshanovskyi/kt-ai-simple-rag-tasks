@@ -53,19 +53,17 @@
         source.onmessage = function (event) {
             clearTimeout(timer);
             if (!(event.data.endsWith('\n'))) {
-                msg += event.data
-                console.log("1 " + msg + ": " + true)
+                msg += event.data;
+                msg += ' '
             } else {
+                msg += event.data;
                 $("#chat-history").append("<li class='list-group-item'>" + msg + "</li>");
-                console.log("2 " + msg + ": " + event.data.endsWith('\n'))
-                msg = ''
+                msg = '';
             }
 
-            if (msg.length > 0) {
-                $("#chat-history").append("<li class='list-group-item'>" + msg + "</li>");
-                msg = ''
-            }
             timer = setTimeout(function () {
+                $("#chat-history").append("<li class='list-group-item'>" + msg + "</li>");
+                msg = '';
                 $("#chat-history").append("<li class='list-group-item'><hr></li>");
             }, 3000);
             $("#question").prop("disabled", false);
