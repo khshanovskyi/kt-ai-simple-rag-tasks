@@ -73,7 +73,21 @@ public class InterviewAssistantConfig {
     InterviewAssistant interviewAssistant(ChatLanguageModel chatLanguageModel,
                                           StreamingChatLanguageModel streamingChatLanguageModel,
                                           EmbeddingModel embeddingModel) throws URISyntaxException {
-        throw new RuntimeException("InterviewAssistant is not implemented yet, please provide implementation in `InterviewAssistantConfig#interviewAssistant`");
+        List<Document> documents = loadDocuments(toPath("documents/interview/"), glob("*.txt"));
+
+        return AiServices.builder(InterviewAssistant.class)
+                .chatLanguageModel(chatLanguageModel)
+                .streamingChatLanguageModel(streamingChatLanguageModel)
+                .chatMemory(MessageWindowChatMemory.withMaxMessages(10))
+                .contentRetriever(
+                        createContentRetriever(
+                                documents,
+                                embeddingStore(dbSettings),
+                                embeddingModel,
+                                DocumentSplitters.recursive(300, 50)
+                        )
+                )
+                .build();
     }
 
     /**
@@ -91,7 +105,15 @@ public class InterviewAssistantConfig {
      * @return instance of {@link PgVectorEmbeddingStore}
      */
     private static EmbeddingStore<TextSegment> embeddingStore(DbSettings dbSettings) {
-        throw new RuntimeException("EmbeddingStore is not implemented yet, please provide implementation in `InterviewAssistantConfig#embeddingStore`");
+        return PgVectorEmbeddingStore.builder()
+                .host(dbSettings.getHost())
+                .port(dbSettings.getPort())
+                .database(dbSettings.getDatabase())
+                .user(dbSettings.getUsername())
+                .password(dbSettings.getPassword())
+                .table(dbSettings.getInterviewsTableName())
+                .dimension(384)
+                .build();
     }
 
     /**
@@ -116,7 +138,15 @@ public class InterviewAssistantConfig {
                                                            EmbeddingStore<TextSegment> embeddingStore,
                                                            EmbeddingModel embeddingModel,
                                                            DocumentSplitter documentSplitter) {
-        throw new RuntimeException("ContentRetriever is not implemented yet, please provide implementation in `InterviewAssistantConfig#createContentRetriever`");
+        EmbeddingStoreIngestor embeddingStoreIngestor = EmbeddingStoreIngestor.builder()
+                .embeddingModel(embeddingModel)
+                .embeddingStore(embeddingStore)
+                .documentSplitter(documentSplitter)
+                .build();
+
+        embeddingStoreIngestor.ingest(documents);
+
+        return EmbeddingStoreContentRetriever.from(embeddingStore);
     }
 
 

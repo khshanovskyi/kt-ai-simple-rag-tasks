@@ -27,7 +27,10 @@ public class LangchaingConfig {
      */
     @Bean
     ChatLanguageModel chatLanguageModel() {
-        throw new RuntimeException("ChatLanguageModel is not implemented yet, please provide implementation in `LangchaingConfig#chatLanguageModel`");
+        return OllamaChatModel.builder()
+                .modelName(modelName)
+                .baseUrl(baseUrl)
+                .build();
     }
 
     /**
@@ -35,7 +38,10 @@ public class LangchaingConfig {
      */
     @Bean
     StreamingChatLanguageModel streamingChatLanguageModel() {
-        throw new RuntimeException("StreamingChatLanguageModel is not implemented yet, please provide implementation in `LangchaingConfig#streamingChatLanguageModel`");
+        return OllamaStreamingChatModel.builder()
+                .baseUrl(baseUrl)
+                .modelName(modelName)
+                .build();
     }
 
     /**
@@ -45,7 +51,7 @@ public class LangchaingConfig {
      */
     @Bean
     EmbeddingModel embeddingModel() {
-        throw new RuntimeException("EmbeddingModel is not implemented yet, please provide implementation in `LangchaingConfig#embeddingModel`");
+        return new AllMiniLmL6V2EmbeddingModel();
     }
 
 }
