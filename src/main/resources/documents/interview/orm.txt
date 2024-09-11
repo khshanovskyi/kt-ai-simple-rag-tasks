@@ -1,0 +1,17 @@
+This document provides questions about Java Hibernate ORM
+
+What is ORM? 3
+What pattern ORM implemented (Active record)? 8
+Does the ORM violate some of the SOLID principles? 7
+JPA vs Hibernate vs Spring Data? 6
+What are some of the important interfaces of Hibernate framework? 4
+What is a Session in Hibernate? 4
+What is a SessionFactory? 4
+Cache levels? 4
+Can you explain what is lazy loading in hibernate? 5
+We have a batch of objects that have 'id' paramether and some objects that are to huge, your suggestions of improvement (@MappedSuperclass, @Embedded - @Embeddable)? 5
+What can you say about @Enumerated annotation? 4
+What can you say about  @ElementCollection and @CollectionTable annotations? 6
+N + 1, what is it? how to solve it? 6
+What is Action Queue? 6
+What is Dirty checking? 5

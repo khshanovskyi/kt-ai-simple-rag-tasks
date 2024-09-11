@@ -1,0 +1,34 @@
+This document provides questions about Java core and OOP
+
+What is OOP? 2
+OOP pillars? 2
+What other principals/paradigm do you know? 3
+Composite vs Aggregation? 3
+Could you describe pros and cons of Java? 2
+SOLID, describe it? 3
+How does HashMap work under the hood? 4
+What is the worst time complexity for put operation in HashMap?	4
+Equals and HashCode, Equality rules? 4
+Differences between HashMap, HashTable, SynchronizedHashMap and ConcurrentHashMap? 5
+What are the differences between ArrayList and LinkedList? 3
+Could you describe the time complexity for insertion in the middle for ArrayList and LinkedList and how it works under the hood? 4
+Sorting, Comparator vs Comparable? 5
+What are the differences between Stack and Heap? 5
+Mutable vs Immutable objects. How to create an Immutable object? 4
+String pool? Integer pool... 4
+What GC do you know? 3
+Could you explain how Parallel GC works? Dependency tree + logical separation for memory? 5
+What are the differences in work between Parallel GC and G1? 6
+If you call the method 'finalize' what happens? 5
+What type of exeptions do you know? What the difference? 4
+How can we handle Exceptions? 4
+When block filally will not work? 5
+How can we create new Thread (variants) and why this operation is complicated? 4
+Mutex vs Monitor? 4
+What does the keyword volatile do? 4
+Lock vs synchronization? 5
+Why do we need ThreadPoolExecutors? 5
+Method get for Feature interface? (blocked/no) 6
+ForkJoinPool.- What can you say about this, what mechanism is under the hood and what algorithm manages Workers? 7
+What is memory leaks in Java and how to detect them? 7
+Imagine the case when we regularly get OutOfMemoryError, what the purpose could be and how we can fix it? 8

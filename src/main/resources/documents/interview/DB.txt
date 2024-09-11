@@ -1,0 +1,28 @@
+This document provides questions about SQL databases
+
+NoSQL vs SQL, what is the difference? 4
+What do you prefer in case u need DB that easily supports horizontal sharing? 6
+BASE model? 5
+Tell about the pros and cons of SQL DBs if we compare them with NoSQL? 5
+What is the transaction? 4
+What do you know about save points?
+ACID, description for each letter in the abbreviation? 5
+Isolation levels of transactions. What kind of problems isolation levels are solving and how? 6
+Optimistic lock vs pessimistic lock? 4
+For what do we need normalization? 4
+Normalization DBs, tell the first 3 forms and by what tools they are supported? 4
+Please, make a deadlock in DB? 6
+What kind of indexes do you know? 3
+What data structure is laying under the hood of the clustered index? 3
+What kind of aggregation functions do you know? 4
+Tell the relations between tables that you know? 4
+How to create one-to-one relations? 4
+How to create many-to-many relations? 4
+Subselect vs join, what the differences? 5
+How to select the top 10 repeatable first names from person table? 6
+CAP theorem? 6
+PACELC theorem? 9
+
+
+
+

@@ -1,0 +1,19 @@
+This document provides questions about Java Spring framework and its components. 
+
+Do you know the history of creation? for what purpose? 6
+What are IoC and DI? 5
+What is Bean? 5
+What is BeanDefinition? 5
+How does Spring core menages dependencies? (dependency tree)? 6
+When we can get NotUniqueBeanDefinitionException and how to solve it? 4
+How does annotation @Cacheble work under the hood? 7
+What does Spring use under the hood for @Transactional? 8
+What happens if we mark the test with annotation @Transactional? 9
+If we mark a method with the annotation @Transactional and pass propagationLevel = MANDATORY, what can happen? 7
+What kind of propagation levels do you know? 6
+Can we manage the isolation level for transactions? 5
+Spring profiling, for what do we need it? 7
+How spring handles @Async, @Transactional? 8
+What is OSIV? 7
+MVC, Spring Web? describe dispatcher servlet? 8
+How does tomcat work under the hood? 9

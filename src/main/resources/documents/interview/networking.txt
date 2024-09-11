@@ -1,0 +1,20 @@
+This document provides questions related to networking, network protocols, etc...
+
+What is the OSI model? 3
+What the differences if compare with TCP/IP model? 4
+TCP protocol vs UDP protocol? Pros and cons of using each of them? Where usually uses UDP? 4
+What is DNS and why do we need it? 3
+IpV4 vs IpV6? 3
+Why do we need IpV6 and why we cannot drop IpV4? 4
+HTTP, what is it and for what do we need it? 3
+What protocols for transporting do you know? (FTP, SMTP) 5
+HTTP vs HTTPS 5
+What do you know about QUIC? 6
+WebSocket vs Socket? 7
+What is Session and why do we need it? 5
+Is it a good idea to store user information in cookies? 5
+What is REST? 5
+REST vs WebSocket? 6
+What is SOAP and WSDL? 5
+
+

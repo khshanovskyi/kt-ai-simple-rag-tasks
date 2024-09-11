@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: kt-ai-simple-rag-tasks
+
+db:
+  username: pgvector_user
+  password: pgvector_pass
+  url: jdbc:postgresql://localhost:6024/kt-tasks
+  host: localhost
+  port: 6024
+  database: kt-tasks
+  interviews-table-name: interviews
+
+ollama:
+  model:
+    name: llama3.1
+  host:
+    url: http://localhost:11434/
