@@ -23,25 +23,19 @@ public class LangchaingConfig {
     private String baseUrl;
 
     /**
-     * Provides Bean of ollama chat model with uts model and base url
+     * Provides Bean of ollama chat model ({@link OllamaChatModel}, it has builder) with uts model and base url
      */
     @Bean
     ChatLanguageModel chatLanguageModel() {
-        return OllamaChatModel.builder()
-                .modelName(modelName)
-                .baseUrl(baseUrl)
-                .build();
+        throw new RuntimeException("ChatLanguageModel is not implemented yet, please provide implementation in `LangchaingConfig#chatLanguageModel`");
     }
 
     /**
-     * Provides Bean of ollama streaming chat model with uts model and base url
+     * Provides Bean of ollama streaming chat model ({@link OllamaStreamingChatModel}, it has builder) with uts model and base url
      */
     @Bean
     StreamingChatLanguageModel streamingChatLanguageModel() {
-        return OllamaStreamingChatModel.builder()
-                .baseUrl(baseUrl)
-                .modelName(modelName)
-                .build();
+        throw new RuntimeException("StreamingChatLanguageModel is not implemented yet, please provide implementation in `LangchaingConfig#streamingChatLanguageModel`");
     }
 
     /**
@@ -51,7 +45,7 @@ public class LangchaingConfig {
      */
     @Bean
     EmbeddingModel embeddingModel() {
-        return new AllMiniLmL6V2EmbeddingModel();
+        throw new RuntimeException("EmbeddingModel is not implemented yet, please provide implementation in `LangchaingConfig#embeddingModel`");
     }
 
 }
