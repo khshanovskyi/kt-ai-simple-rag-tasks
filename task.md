@@ -20,4 +20,4 @@
 4. **Take a look at database content, DB name: `kt-tasks`, table: `interviews`. Take a look at embeddings, text and metadata**
 5. Try to change system prompt. For instance change expected output and say it to provide answers where it possible
 
-
+### In case if you stuck with smth, you can check `completed` branch, or search Lanchain4j documentation
