@@ -45,9 +45,11 @@ public class LangchaingConfig {
     }
 
     /**
-     * Been that will be used for creating <a href="https://python.langchain.com/v0.2/docs/concepts/#embedding-models">embeddings</a> from provided documents
+     * Been that will be used for creating <a href="https://docs.langchain4j.dev/category/embedding-models/">embeddings</a> from provided documents
      *
-     * @return {@link AllMiniLmL6V2EmbeddingModel}
+     * @return {@link AllMiniLmL6V2EmbeddingModel} (just new AllMiniLmL6V2EmbeddingModel()) this model is running in
+     * memory and doesn't use any LLM's
+     * @see <a href="https://docs.langchain4j.dev/integrations/embedding-models/in-process">About onnx AllMiniLmL6V2EmbeddingModel model</a>
      */
     @Bean
     EmbeddingModel embeddingModel() {

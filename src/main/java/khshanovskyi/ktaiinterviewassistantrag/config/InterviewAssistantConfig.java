@@ -9,6 +9,7 @@ import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.chat.StreamingChatLanguageModel;
 import dev.langchain4j.model.embedding.EmbeddingModel;
+import dev.langchain4j.model.embedding.onnx.allminilml6v2.AllMiniLmL6V2EmbeddingModel;
 import dev.langchain4j.rag.content.retriever.ContentRetriever;
 import dev.langchain4j.rag.content.retriever.EmbeddingStoreContentRetriever;
 import dev.langchain4j.service.AiServices;
@@ -96,9 +97,10 @@ public class InterviewAssistantConfig {
      * - host <br>
      * - port <br>
      * - database <br>
+     * - user <br>
      * - password <br>
      * - table <br>
-     * - dimension (set it as 384) because we use small AI model<br>
+     * - dimension (set it as 384) because we are using {@link AllMiniLmL6V2EmbeddingModel} and <br>
      * <br>
      * <b>Almost all parameters are already preconfigured, use <i>dbSettings</i> Bean</b>
      *
