@@ -11,7 +11,7 @@
       - install ollama from [link](https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image) 
       - run `ollama run llama3.1`
       - 
-- **OpenAI: PAY ATTENTION THAT YOU NEED TO PAY CREDIT TO USE ITS API** [OpenAI Platform](https://platform.openai.com/)
+- **OpenAI: PAY ATTENTION THAT YOU NEED TO PAY CREDIT (1$-10$) TO USE ITS API** [OpenAI Platform](https://platform.openai.com/)
   - add your API_KEY to `application.yaml` -> `open-ai.api-key`
   - by default, we are using `gpt-3.5-turbo` model
 
