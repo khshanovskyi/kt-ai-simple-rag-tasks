@@ -2,7 +2,8 @@
 
 
 ## Prerequisites:
-1. Run locally `llama3.1`
+### Choose LLM that you will use:
+- **Ollama:** Run locally `llama3.1`, **PAY ATTENTION THAT IT CAN WORK SLOW DEPENDING ON MACHINE**
     - On Windows/Linux or Mac with Intel:
       - pull image and run ollama `docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama`
       - run llama3.1 `docker exec -it ollama ollama run llama3.1`
@@ -10,7 +11,12 @@
       - install ollama from [link](https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image) 
       - run `ollama run llama3.1`
       - 
-2. Run locally PGVector DB, **Pay attention, pg vector port will be routed to 6024, I've done it intentionally in case of port forwarding issues with Postgres**
+- **OpenAI: PAY ATTENTION THAT YOU NEED TO PAY CREDIT (1$-10$) TO USE ITS API** [OpenAI Platform](https://platform.openai.com/)
+  - add your API_KEY to `application.yaml` -> `open-ai.api-key`
+  - by default, we are using `gpt-3.5-turbo` model
+
+### Run PG Vector DB 
+Run locally PGVector DB, **Pay attention, pg vector port will be routed to 6024, I've done it intentionally in case of port forwarding issues with Postgres**
    - `docker run --name pgvector-container -e POSTGRES_USER=pgvector_user -e POSTGRES_PASSWORD=pgvector_pass -e POSTGRES_DB=kt-tasks -p 6024:5432 -d ankane/pgvector`
 
 ## Task:
