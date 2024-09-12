@@ -11,6 +11,9 @@ db:
   database: kt-tasks
   interviews-table-name: interviews
 
+open-ai:
+  api-key: ${OPENAI_API_KEY}
+
 ollama:
   model:
     name: llama3.1
