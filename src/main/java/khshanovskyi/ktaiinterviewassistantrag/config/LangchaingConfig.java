@@ -45,9 +45,14 @@ public class LangchaingConfig {
      */
     @Bean
     ChatLanguageModel chatLanguageModel() {
-        return OllamaChatModel.builder()
-                .modelName(modelName)
-                .baseUrl(baseUrl)
+//        return OllamaChatModel.builder()
+//                .modelName(ollamaModelName)
+//                .baseUrl(ollamaBaseUrl)
+//                .build();
+
+        return OpenAiChatModel.builder()
+                .modelName(openAIModelName)
+                .apiKey(openAIApiKey)
                 .build();
     }
 
@@ -63,9 +68,14 @@ public class LangchaingConfig {
      */
     @Bean
     StreamingChatLanguageModel streamingChatLanguageModel() {
-        return OllamaStreamingChatModel.builder()
-                .baseUrl(baseUrl)
-                .modelName(modelName)
+//        return OllamaStreamingChatModel.builder()
+//                .baseUrl(ollamaBaseUrl)
+//                .modelName(ollamaModelName)
+//                .build();
+
+        return OpenAiStreamingChatModel.builder()
+                .modelName(openAIModelName)
+                .apiKey(openAIApiKey)
                 .build();
     }
 
