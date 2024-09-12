@@ -13,6 +13,8 @@ db:
 
 open-ai:
   api-key: ${OPENAI_API_KEY}
+  model:
+    name: gpt-3.5-turbo
 
 ollama:
   model:
