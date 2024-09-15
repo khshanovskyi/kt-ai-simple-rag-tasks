@@ -22,7 +22,7 @@ Run locally PGVector DB, **Pay attention, pg vector port will be routed to 6024,
 ## Task:
 1. Implement methods in `InterviewAssistantConfig` and `LangchaingConfig` according to the documentation
 2. Run application
-3. Test the flow with Postman `localhost:8080/v1/interview/chat?question=I need 10 questions about python` and in browser
+3. Test the flow with Postman `localhost:8080/v1/interview/chat?question=I need 10 questions about python` and in browser `localhost:8080`
 4. **Take a look at database content, DB name: `kt-tasks`, table: `interviews`. Take a look at embeddings, text and metadata**
 5. Try to change system prompt. For instance change expected output and say it to provide answers where it possible
 

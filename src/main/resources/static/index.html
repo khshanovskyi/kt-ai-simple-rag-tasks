@@ -16,6 +16,10 @@
         .list-group-item {
             word-wrap: break-word;
         }
+
+        .chat-message {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
     </style>
 </head>
 <body class="container">
@@ -45,6 +49,9 @@
         var question = $("#question").val();
         $("#question").val("").prop("disabled", true);
 
+        // Append the question to the chat history
+        $("#chat-history").append("<li class='list-group-item'><strong>" + question + "</strong></li>");
+
         if (source) {
             source.close();
         }
@@ -52,19 +59,21 @@
         source = new EventSource('v1/interview/chat-stream?question=' + question);
         source.onmessage = function (event) {
             clearTimeout(timer);
-            if (!(event.data.endsWith('\n'))) {
+            if (event.data.endsWith('\n')) {
                 msg += event.data;
-                msg += ' '
+                $("#chat-history").append("<p class='chat-message'>" + msg + "</p>");
+                msg = '';
             } else {
                 msg += event.data;
-                $("#chat-history").append("<li class='list-group-item'>" + msg + "</li>");
-                msg = '';
+                msg += ' '
             }
 
             timer = setTimeout(function () {
-                $("#chat-history").append("<li class='list-group-item'>" + msg + "</li>");
-                msg = '';
-                $("#chat-history").append("<li class='list-group-item'><hr></li>");
+                if (msg !== '') {
+                    $("#chat-history").append("<p class='chat-message'>" + msg + "</p>");
+                    msg = '';
+                }
+                // $("#chat-history").append("<li class='list-group-item'><hr></li>");
             }, 3000);
             $("#question").prop("disabled", false);
         };
