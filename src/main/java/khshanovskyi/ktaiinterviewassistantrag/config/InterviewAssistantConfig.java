@@ -28,8 +28,6 @@ import java.nio.file.PathMatcher;
 import java.util.List;
 
 import static dev.langchain4j.data.document.loader.FileSystemDocumentLoader.loadDocuments;
-import static khshanovskyi.ktaiinterviewassistantrag.utils.Utils.glob;
-import static khshanovskyi.ktaiinterviewassistantrag.utils.Utils.toPath;
 
 @Configuration
 public class InterviewAssistantConfig {
@@ -52,9 +50,9 @@ public class InterviewAssistantConfig {
      * <p>
      * 1. Use {@link AiServices} builder and pass {@link InterviewAssistant} class <br>
      * <p>
-     * 2. Configure chat language model (TODO: need to configure this bean in {@link LangchaingConfig#chatLanguageModel()}) <br>
+     * 2. Configure chat language model (TODO: need to configure this bean in {@link AiModelConfig#chatLanguageModel()}) <br>
      * <p>
-     * 3. Configure streaming chat language model (TODO: need to configure this bean in {@link LangchaingConfig#streamingChatLanguageModel()}) <br>
+     * 3. Configure streaming chat language model (TODO: need to configure this bean in {@link AiModelConfig#streamingChatLanguageModel()}) <br>
      * <p>
      * 4. Configure chat memory, can use {@link MessageWindowChatMemory#withMaxMessages(int)} where you can configure
      * amount of messages from history to pass with request <br>
@@ -68,7 +66,7 @@ public class InterviewAssistantConfig {
      * @param chatLanguageModel          Bean, instance of {@link ChatLanguageModel}
      * @param streamingChatLanguageModel Bean, instance of {@link StreamingChatLanguageModel}
      * @param embeddingModel             Bean, instance of {@link EmbeddingModel}
-     * @see LangchaingConfig
+     * @see AiModelConfig
      */
     @Bean
     InterviewAssistant interviewAssistant(ChatLanguageModel chatLanguageModel,

@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
  * Configuration with AI models. Here we configure chat, streaming, and embedding model
  */
 @Configuration
-public class LangchaingConfig {
+public class AiModelConfig {
 
     @Value("${ollama.model.name}")
     private String ollamaModelName;
