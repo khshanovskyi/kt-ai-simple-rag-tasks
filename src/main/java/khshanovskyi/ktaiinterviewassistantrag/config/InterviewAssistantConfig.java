@@ -28,6 +28,8 @@ import java.nio.file.PathMatcher;
 import java.util.List;
 
 import static dev.langchain4j.data.document.loader.FileSystemDocumentLoader.loadDocuments;
+import static khshanovskyi.ktaiinterviewassistantrag.utils.Utils.glob;
+import static khshanovskyi.ktaiinterviewassistantrag.utils.Utils.toPath;
 
 @Configuration
 public class InterviewAssistantConfig {
